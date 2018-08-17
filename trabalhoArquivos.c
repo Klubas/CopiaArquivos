@@ -42,6 +42,7 @@ int main(){
     calculaTempo(file1);
     calculaTempo(file2);
     calculaTempo(file3);
+    calculaTempo(file4);
     exit(0);
 }
 
@@ -65,7 +66,7 @@ void criarArquivos(){
     encheArquivo(file1, '1');
     encheArquivo(file2, '2');
     encheArquivo(file3, '3');
-    //encheArquivo(file4, 'c');*/
+    encheArquivo(file4, 'c');
 
     resultFunc.id = "ResultFunc.csv";
     resultSys.id = "ResultSys.csv";
