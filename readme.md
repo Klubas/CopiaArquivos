@@ -1,6 +1,4 @@
-Trabalho
-
-Avaliação de desempenho em termo de speedup
+# Avaliação de desempenho em termo de speedup
 
 Comparar as Duas estratégias (syscalls e funções).
 Método de cópia: 1 bloco de cada vez
@@ -32,15 +30,20 @@ Repetir 5X e anotar os resultados (tempo) e fazer média
 thelinuxdocumentationproject
 tldp.org
 
-###Resultados
-#Notebook 
-i3 3310m 2.4GHz
-6GB RAM
-HDD 320GB 5400 RPM
+## Resultados
 
-#Desktop
-Ryzen 3 1300x 3.5GHz
-12GB RAM
-SSD 480GB 6Gb/s
-HDD 750GB 5400 RPM
+### Notebook 
+    Linux Manjaro
+    i3 3310m 2.4GHz
+    6GB RAM
+    HDD 320GB 5400 RPM
+
+
+### Desktop
+    Windows 10 Pro
+    Ryzen 3 1300x 3.5GHz
+    12GB RAM
+    SSD 480GB 6Gb/s
+    HDD 750GB 5400 RPM
+
 
