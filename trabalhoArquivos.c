@@ -45,7 +45,7 @@ int main(){
     printf("Manter arquivos copiados em disco (s/n)\n > ");
     scanf("%c", &c);
     
-    if(c == 's'){
+    if(c == 'n'){
         printf("Arquivos serao mantidos.\n");
         remover_out = 1;
     } else {
