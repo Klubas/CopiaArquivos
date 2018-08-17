@@ -31,6 +31,7 @@ MeuArquivo file3;
 MeuArquivo file4;
 MeuArquivo resultFunc;
 MeuArquivo resultSys;
+MeuArquivo resultCriar;
 
 int remover_out = 1;
 
@@ -81,27 +82,39 @@ void criarArquivos(){
     encheArquivo(file2, '2');
     encheArquivo(file3, '3');
     encheArquivo(file4, '4');
-
+    
+    //arquivos de resultados
     resultFunc.id = "ResultFunc.csv";
     resultSys.id = "ResultSys.csv";
+    resultCriar.id = "ResultCriar.csv"
+        
     resultFunc.in = fopen(resultFunc.id, "w");
     resultSys.in = fopen(resultSys.id, "w");
+    resultCriar.in = fopen(resultCriar.id, "w");
+    
     fprintf(resultFunc.in, "Arquivo, tamanho, tempo\n");
     fprintf(resultSys.in, "Arquivo, tamanho, tempo\n");
+    fprintf(resultCriar.in, "Arquivo, tamanho, tempo\n");
+    
     fclose(resultFunc.in);
     fclose(resultSys.in);
+    fclose(resultCriar.in);
 }
 
-void encheArquivo(MeuArquivo file, char c){
+double encheArquivo(MeuArquivo file, char c){
     int i;
     file.in = fopen(file.id, "w");
     printf("Criando arquivo %s\n", file.id);
-    while(i < file.tam){
-        fputc(c, file.in);
-        i++;
-    }
+    
+    gettimeofday(&t_inicio, &tzp);
+    for(i=0; i < file.tam; i++) fputc(c, file.in);
+    gettimeofday(&t_fim, &tzp);
+    
     fclose(file.in);
     printf("Criado arquivo %s. Tamanho: %d Bytes\n", file.id, file.tam);
+    
+    return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
+            (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
 }
 
 void calculaTempo(MeuArquivo file){
@@ -116,7 +129,7 @@ void calculaTempo(MeuArquivo file){
 }
 
 //gravar bytes em arquivo file usando funcao
-float copiaFunc(MeuArquivo file){
+double copiaFunc(MeuArquivo file){
     char c;
    
     file.in = fopen(file.id,"r");
@@ -141,7 +154,7 @@ float copiaFunc(MeuArquivo file){
 }
 
 //grava bytes em arquivo file usando syscall
-float copiaSys(MeuArquivo file){
+double copiaSys(MeuArquivo file){
     char c;
     int in, out;
 
