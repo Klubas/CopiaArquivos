@@ -3,7 +3,7 @@
 Comparar as Duas estratégias (syscalls e funções).
 Método de cópia: 1 bloco de cada vez
 
-1 - Criar arquivos:
+### 1. Criar arquivos:
 4 Arquivos:
     1 Byte
     1024 Bytes 1k
@@ -15,7 +15,7 @@ Repetir 5x e anotar os resultados (tempos) e fazer média
     Enquanto (cont < tamanho_arquivo)
         fputc("A")
 
-2 - Copiar 4 arquivos:
+### 2. Copiar 4 arquivos:
     file.in -> file.out
 Repetir 5X e anotar os resultados (tempo) e fazer média
 
@@ -24,7 +24,7 @@ Repetir 5X e anotar os resultados (tempo) e fazer média
 1 Criar arquivos
 2 Copiar arquivos
 
--> Explicação do resultados (por que o desempenho varia)
+### 3. Explicação do resultados (por que o desempenho varia)
 -> Referências pesquisa
 
 thelinuxdocumentationproject
@@ -34,15 +34,15 @@ tldp.org
 
 ### Notebook 
     Linux Manjaro
-    i3 3310m 2.4GHz
-    6GB RAM
+    Intel Core i3 3310m 2.4GHz
+    6GB RAM DDR3 1600MHz
     HDD 320GB 5400 RPM
 
 
 ### Desktop
     Windows 10 Pro
-    Ryzen 3 1300x 3.5GHz
-    12GB RAM
+    AMD Ryzen 3 1300x 3.5GHz
+    12GB RAM DDR4 2400MHz
     SSD 480GB 6Gb/s
     HDD 750GB 5400 RPM
 
