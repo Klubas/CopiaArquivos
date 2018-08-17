@@ -55,3 +55,9 @@ Repetir 5x o procedimento de cópia e anotar os resultados (tempos) e fazer méd
     HDD 750GB 5400 RPM
 
 
+#### TODO
+criarArquivo(); //todos os parametros de MeuArquivo
+
+calculaTempoCopiar(); //so renomear calculaTempo
+
+calculaTempoCriar(); //calcular tempo médio de criação de arquivos e gravar em .csv
