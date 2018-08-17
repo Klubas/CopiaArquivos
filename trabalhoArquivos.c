@@ -32,12 +32,27 @@ MeuArquivo file4;
 MeuArquivo resultFunc;
 MeuArquivo resultSys;
 
+int remover_out = 1;
+
 struct timeval t_inicio, t_fim;
 struct timezone tzp;
 
 int main(){
     int i;
+    char c = 'n';
     criarArquivos();
+    
+    printf("Manter arquivos copiados em disco (s/n)\n > ");
+    scanf("%c", &c);
+    
+    if(c == 's'){
+        printf("Arquivos serao mantidos.\n");
+        remover_out = 1;
+    } else {
+        printf("Arquivos serao removidos.\n");
+        remover_out = 0;
+    }
+    
     calculaTempo(file1);
     calculaTempo(file2);
     calculaTempo(file3);
@@ -113,9 +128,14 @@ float copiaFunc(MeuArquivo file){
 
     fclose(file.in);
     fclose(file.out);
-
+    
     printf("Arquivo %s copiado utilizando Funcoes\n", file.id);
-
+    
+    if(remover_out){
+        remove(file.output_id);
+        printf("%s foi removido", file.output_id);
+    }
+    
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
 }
@@ -137,6 +157,11 @@ float copiaSys(MeuArquivo file){
     close(out);
 
     printf("Arquivo %s copiado utilizando Syscalls\n", file.id);
+    
+    if(remover_out){
+        remove(file.output_id);
+        printf("%s foi removido", file.output_id);
+    }
 
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
