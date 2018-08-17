@@ -34,7 +34,6 @@ MeuArquivo resultSys;
 
 struct timeval t_inicio, t_fim;
 struct timezone tzp;
-double tempo, t_total;
 
 int main(){
     int i;
@@ -66,7 +65,7 @@ void criarArquivos(){
     encheArquivo(file1, '1');
     encheArquivo(file2, '2');
     encheArquivo(file3, '3');
-    encheArquivo(file4, 'c');
+    encheArquivo(file4, '4');
 
     resultFunc.id = "ResultFunc.csv";
     resultSys.id = "ResultSys.csv";
@@ -81,19 +80,24 @@ void criarArquivos(){
 void encheArquivo(MeuArquivo file, char c){
     int i;
     file.in = fopen(file.id, "w");
+    printf("Criando arquivo %s\n", file.id);
     while(i < file.tam){
         fputc(c, file.in);
         i++;
     }
     fclose(file.in);
+    printf("Criado arquivo %s. Tamanho: %d Bytes\n", file.id, file.tam);
 }
 
 void calculaTempo(MeuArquivo file){
     int i;
     for (i = 0; i < 5; i++){
+        printf("[%d] Copiando arquivo %s.\n", i, file.id);
         salvaResultados(resultFunc, file, copiaFunc(file));
         salvaResultados(resultSys, file, copiaSys(file));
     }
+    printf("Resultados (funcoes) gravados em %s\n", resultFunc.id);
+    printf("Resultados (syscalls) gravados em %s\n", resultSys.id);
 }
 
 //gravar bytes em arquivo file usando funcao
@@ -110,6 +114,8 @@ float copiaFunc(MeuArquivo file){
     fclose(file.in);
     fclose(file.out);
 
+    printf("Arquivo %s copiado utilizando Funcoes\n", file.id);
+
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
 }
@@ -120,8 +126,8 @@ float copiaSys(MeuArquivo file){
     int in, out;
 
     in = open(file.id, O_RDONLY);
-    //out = open(file.output_id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
-    out = open(file.output_id, O_WRONLY | O_CREAT);
+    out = open(file.output_id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
+    //out = open(file.output_id, O_WRONLY | O_CREAT);
     
     gettimeofday(&t_inicio, &tzp);
     while(read(in,&c,1) == 1) write(out,&c,1);
@@ -129,6 +135,8 @@ float copiaSys(MeuArquivo file){
     
     close(in);
     close(out);
+
+    printf("Arquivo %s copiado utilizando Syscalls\n", file.id);
 
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
