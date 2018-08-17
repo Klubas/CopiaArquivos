@@ -18,11 +18,11 @@ struct MeuArquivo{
 
 void criarArquivos();
 void calculaTempo(MeuArquivo);
-void encheArquivo(MeuArquivo, char);
+double encheArquivo(MeuArquivo, char);
 void calculaTempo(MeuArquivo);
 void salvaResultados(MeuArquivo, MeuArquivo, float);
-float copiaFunc(MeuArquivo);
-float copiaSys(MeuArquivo);
+double copiaFunc(MeuArquivo);
+double copiaSys(MeuArquivo);
 /*fim coisas que deveriam ser um header*/
 
 MeuArquivo file1;
@@ -86,7 +86,7 @@ void criarArquivos(){
     //arquivos de resultados
     resultFunc.id = "ResultFunc.csv";
     resultSys.id = "ResultSys.csv";
-    resultCriar.id = "ResultCriar.csv"
+    resultCriar.id = "ResultCriar.csv";
         
     resultFunc.in = fopen(resultFunc.id, "w");
     resultSys.in = fopen(resultSys.id, "w");
