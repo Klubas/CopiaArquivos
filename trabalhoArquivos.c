@@ -133,7 +133,7 @@ float copiaFunc(MeuArquivo file){
     
     if(remover_out){
         remove(file.output_id);
-        printf("%s foi removido", file.output_id);
+        printf("%s foi removido.\n", file.output_id);
     }
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
@@ -160,7 +160,7 @@ float copiaSys(MeuArquivo file){
     
     if(remover_out){
         remove(file.output_id);
-        printf("%s foi removido", file.output_id);
+        printf("%s foi removido.\n", file.output_id);
     }
 
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
