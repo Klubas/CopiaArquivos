@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 log="logfile.log"
 
-if [ $# == 0 ]; then
+if [ $# == 0 ];  then
 	rm File1.in File1.out File2.in File2.out File3.in File3.out File4.in File4.out ResultFunc.csv ResultSys.csv ResultCriarFunc.csv ResultCriarSys.csv 2>> $log
 	echo "Arquivos removidos"
 	exit 0

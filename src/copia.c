@@ -154,7 +154,7 @@ void calculaTempoCopiar(MeuArquivo file){
         salvaResultados(resultSys, file, copiaSys(file));
     }
     fprintf(output, "%s Resultados (funcoes) gravados em %s\n", agora(),resultFunc.id);
-    fprintf(output, "Resultados (syscalls) gravados em %s\n", agora(),resultSys.id);
+    fprintf(output, "%s Resultados (syscalls) gravados em %s\n", agora(),resultSys.id);
 }
 
 void calculaTempoCriar(MeuArquivo file){
@@ -172,6 +172,8 @@ void calculaTempoCriar(MeuArquivo file){
 double encheArquivoFunc(MeuArquivo file, char c){
     int i;
     file.in = fopen(file.id, "w");    
+
+     fprintf(output, "%s Criando arquivo %s usando funcoes",agora() , file.id);
     
     gettimeofday(&t_inicio, &tzp);
     for(i=0; i < file.tam; i++) fputc(c, file.in);
@@ -179,6 +181,11 @@ double encheArquivoFunc(MeuArquivo file, char c){
     
     fclose(file.in);
     fprintf(output, "%s Criado arquivo %s. - Tamanho: %d Bytes\n",agora() ,file.id, file.tam);
+
+    if(remover_out){
+        remove(file.output_id);
+        fprintf(output, "%s %s foi removido.\n",agora(), file.output_id);
+    }
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
@@ -189,12 +196,19 @@ double encheArquivoSys(MeuArquivo file, char c){
 
     in = open(file.id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
 
+   fprintf(output, "%s Criando arquivo %s usando syscalls",agora() , file.id);
+
     gettimeofday(&t_inicio, &tzp);
     for(i = 0;i < file.tam; i++) write(in,&c,1);
     gettimeofday(&t_fim, &tzp);
     
     close(in);
     fprintf(output, "%s Criado arquivo %s. - Tamanho: %d Bytes\n",agora() , file.id, file.tam);
+
+    if(remover_out){
+        remove(file.output_id);
+        fprintf(output, "%s %s foi removido.\n",agora(), file.output_id);
+    }
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
@@ -206,6 +220,8 @@ double copiaFunc(MeuArquivo file){
    
     file.in = fopen(file.id,"r");
     file.out = fopen(file.output_id,"w");
+
+    fprintf(output, "%s Copiando arquivo %s usando funcoes",agora() , file.id);
 
     gettimeofday(&t_inicio, &tzp);
     while((c = fgetc(file.in)) != EOF) fputc(c, file.out);
@@ -233,6 +249,8 @@ double copiaSys(MeuArquivo file){
     in = open(file.id, O_RDONLY);
     out = open(file.output_id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
     //out = open(file.output_id, O_WRONLY | O_CREAT);
+
+    fprintf(output, "%s Copiando arquivo %s usando syscalls",agora() , file.id);
     
     gettimeofday(&t_inicio, &tzp);
     while(read(in,&c,1) == 1) write(out,&c,1);
