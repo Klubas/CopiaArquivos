@@ -90,7 +90,7 @@ int main(){
         fclose(output);
         printf("Execucao completa, verifique o arquivo de log\n");
     }
-    
+
     exit(0);
 }
 
