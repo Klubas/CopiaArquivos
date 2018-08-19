@@ -16,10 +16,11 @@ struct MeuArquivo{
     FILE *out;
 } typedef MeuArquivo;
 
-void criarArquivos();
-void calculaTempo(MeuArquivo);
+void criarArquivo();
+void criarArquivosResult();
+void calculaTempoCriar(MeuArquivo file);
+void calculaTempoCopiar(MeuArquivo);
 double encheArquivo(MeuArquivo, char);
-void calculaTempo(MeuArquivo);
 void salvaResultados(MeuArquivo, MeuArquivo, float);
 double copiaFunc(MeuArquivo);
 double copiaSys(MeuArquivo);
@@ -41,27 +42,53 @@ struct timezone tzp;
 int main(){
     int i;
     char c = 'n';
-    criarArquivos();
+
+    criarArquivo();
     
-    printf("Manter arquivos copiados em disco (s/n)\n > ");
+    criarArquivosResult();
+    calculaTempoCriar(file1);
+    calculaTempoCriar(file2);
+    calculaTempoCriar(file3);
+    calculaTempoCriar(file4);
+    
+    printf("\nManter arquivos copiados em disco (S/n)\n > ");
     scanf("%c", &c);
     
-    if(c == 'n'){
-        printf("Arquivos serao mantidos.\n");
+    if(c == 'n' || c == 'N'){
+        printf("Arquivos serao removidos.\n");
         remover_out = 1;
     } else {
-        printf("Arquivos serao removidos.\n");
+        printf("Arquivos serao mantidos.\n");
         remover_out = 0;
     }
     
-    calculaTempo(file1);
-    calculaTempo(file2);
-    calculaTempo(file3);
-    calculaTempo(file4);
+    calculaTempoCopiar(file1);
+    calculaTempoCopiar(file2);
+    calculaTempoCopiar(file3);
+    calculaTempoCopiar(file4);
+
     exit(0);
 }
 
-void criarArquivos(){
+void criarArquivosResult(){
+    resultFunc.id = "ResultFunc.csv";
+    resultSys.id = "ResultSys.csv";
+    resultCriar.id = "ResultCriar.csv";
+        
+    resultFunc.in = fopen(resultFunc.id, "w");
+    resultSys.in = fopen(resultSys.id, "w");
+    resultCriar.in = fopen(resultCriar.id, "w");
+    
+    fprintf(resultFunc.in, "Arquivo, tamanho, tempo\n");
+    fprintf(resultSys.in, "Arquivo, tamanho, tempo\n");
+    fprintf(resultCriar.in, "Arquivo, tamanho, tempo\n");
+    
+    fclose(resultFunc.in);
+    fclose(resultSys.in);
+    fclose(resultCriar.in); 
+}
+
+void criarArquivo(){
     //Inicializa os 4 arquivos
     file1.id = "File1.in"; 
     file2.id = "File2.in"; 
@@ -77,55 +104,41 @@ void criarArquivos(){
     file2.tam = 1024;
     file3.tam = 1024 * 1024;
     file4.tam = 1024 * 1024 * 1024;
-
-    encheArquivo(file1, '1');
-    encheArquivo(file2, '2');
-    encheArquivo(file3, '3');
-    encheArquivo(file4, '4');
-    
-    //arquivos de resultados
-    resultFunc.id = "ResultFunc.csv";
-    resultSys.id = "ResultSys.csv";
-    resultCriar.id = "ResultCriar.csv";
-        
-    resultFunc.in = fopen(resultFunc.id, "w");
-    resultSys.in = fopen(resultSys.id, "w");
-    resultCriar.in = fopen(resultCriar.id, "w");
-    
-    fprintf(resultFunc.in, "Arquivo, tamanho, tempo\n");
-    fprintf(resultSys.in, "Arquivo, tamanho, tempo\n");
-    fprintf(resultCriar.in, "Arquivo, tamanho, tempo\n");
-    
-    fclose(resultFunc.in);
-    fclose(resultSys.in);
-    fclose(resultCriar.in);
 }
 
 double encheArquivo(MeuArquivo file, char c){
     int i;
-    file.in = fopen(file.id, "w");
-    printf("Criando arquivo %s\n", file.id);
+    file.in = fopen(file.id, "w");    
     
     gettimeofday(&t_inicio, &tzp);
     for(i=0; i < file.tam; i++) fputc(c, file.in);
     gettimeofday(&t_fim, &tzp);
     
     fclose(file.in);
-    printf("Criado arquivo %s. Tamanho: %d Bytes\n", file.id, file.tam);
+    printf("Criado arquivo %s. | Tamanho: %d Bytes\n", file.id, file.tam);
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
 }
 
-void calculaTempo(MeuArquivo file){
-    int i;
+void calculaTempoCopiar(MeuArquivo file){
+    int i = 0;
     for (i = 0; i < 5; i++){
-        printf("[%d] Copiando arquivo %s.\n", i, file.id);
+        printf("\n[%d]\nCopiando arquivo %s.\n", i, file.id);
         salvaResultados(resultFunc, file, copiaFunc(file));
         salvaResultados(resultSys, file, copiaSys(file));
     }
-    printf("Resultados (funcoes) gravados em %s\n", resultFunc.id);
+    printf("\nResultados (funcoes) gravados em %s\n", resultFunc.id);
     printf("Resultados (syscalls) gravados em %s\n", resultSys.id);
+}
+
+void calculaTempoCriar(MeuArquivo file){
+    int i;
+    for (i = 0; i < 5; i++){
+        printf("\n[%d]\nCriando arquivo %s.\n", i, file.id);
+        salvaResultados(resultCriar, file, encheArquivo(file, 'A'));
+    }
+    printf("\nResultados (criacao) gravados em %s\n", resultCriar.id);
 }
 
 //gravar bytes em arquivo file usando funcao
