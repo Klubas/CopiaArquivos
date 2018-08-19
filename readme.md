@@ -4,47 +4,93 @@ Comparar as Duas estratégias (syscalls e funções).
 
 Método de cópia: 1 bloco de cada vez
 
-### 1. Criar arquivos:
 
-Repetir 5x o procedimento de criar arquivo e anotar os resultados (tempos) e fazer média
+## 1. Métodos utilizados para análise
+### a. Criação de arquivos
 
-4 Arquivos:
+Foram primeiro criados 4 arquivos, de acordo com a tabela:
 
- >   1 Byte
- >
- >   1024 Bytes
- >
- >   1024 * 1024
- >
- >   1024 * 1024  * 1024
+| Arquivo  	| Tamanho (bytes)| 
+|----------	|------------	|
+| File1.in 	| 1          	|
+| File2.in 	| 1024       	|
+| File3.in 	| 1048576    	|
+| File4.in 	| 1073741824 	|
+
+Esse procedimento foi repetido 10 vezes para cada arquivo:
+- 5 utilizando funções de manipulação de arquivo 
+- 5 utilizando syscalls para gravaçãO em arquivo
+
+Pseudocódigo da gravação em arquivo:
 
     Enquanto (cont < tamanho_arquivo)
-        fputc("A")
+        escreva('A', file); cont++;
+        
+Utilizando a função gettimeofday() foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.
 
-### 2. Copiar 4 arquivos:
+### b. Copia de arquivos:
 
-Repetir 5x o procedimento de cópia e anotar os resultados (tempos) e fazer média
+Utilizando os arrquivos anteriores foi feito o processo de cópia, também 10 vezes para cada arquivos:
+- 5 utilizando funções de manipulação de arquivo
+- 5 utilizando syscalls para cópia do arquivo
+
+Psudocódigo cópia de arquivo
     
-    file.in -> file.out
+    Enquanto (c = leia(input) != EOF)
+        escreva(c, output);
+       
+Utilizando a função gettimeofday() foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.       
 
-### 3. Resultados
-- Conf Máquina (Hardware/Software)
-- Média de tempos (5x) p/ 4 tamanhos de arquivos
-    - Criar arquivos
-    - Copiar arquivos
- 
- ### 4. Explicação do resultados (por que o desempenho varia)
- - Referências pesquisa
 
-       thelinuxdocumentationproject
-       tldp.org
- 
-## Configuração
-### Notebook 
+## 2. Resultados
+### a. Configuração
     Linux Manjaro
     Intel Core i3 3310m 2.4GHz
     6GB RAM DDR3 1600MHz
     HDD 320GB 5400 RPM
+    
+#### Criação dos arquivos usando funções
+
+| Arquivo  	| tamanho    	| Tempo Médio |
+|----------	|------------	|------------	|
+| File1.in 	| 1          	| 0,0000032  	|
+| File2.in 	| 1024       	| 0,0000102  	|
+| File3.in 	| 1048576    	| 0,0084248  	|
+| File4.in 	| 1073741824 	| 11,3113002 	|
+
+#### Criação dos arquivos usando syscalls
+
+| Arquivo  	| tamanho    	| Tempo Médio |
+|----------	|------------	|------------	|
+| File1.in 	| 1          	| 0,  	|
+| File2.in 	| 1024       	| 0,  	|
+| File3.in 	| 1048576    	| 0,  	|
+| File4.in 	| 1073741824 	| 0   	|
+
+### Cópia de arquivos usando funções
+
+| Arquivo  	| tamanho    	| Tempo Médio|
+|----------	|------------	|-----------	|
+| File1.in 	| 1          	| 0,0000098 	|
+| File2.in 	| 1024       	| 0,0000214 	|
+| File3.in 	| 1048576    	| 0,0110352 	|
+| File4.in 	| 1073741824 	| 14,375128 	|
+
+#### Cópia de arquivos usando syscalls
+
+| Arquivo  	| tamanho    	| Tempo Médio  |
+|----------	|------------	|-------------	|
+| File1.in 	| 1          	| 0,000016    	|
+| File2.in 	| 1024       	| 0,0035406   	|
+| File3.in 	| 1048576    	| 2,1966092   	|
+| File4.in 	| 1073741824 	| 2651,520801 	|
+
+
+ ## 4. Explicação do resultados (por que o desempenho varia)
+ - Referências pesquisa
+
+       thelinuxdocumentationproject
+       tldp.org
 
 
 ### Desktop
@@ -54,10 +100,3 @@ Repetir 5x o procedimento de cópia e anotar os resultados (tempos) e fazer méd
     SSD 480GB 6Gb/s
     HDD 750GB 5400 RPM
 
-
-#### TODO
-criarArquivo(); //todos os parametros de MeuArquivo
-
-calculaTempoCopiar(); //so renomear calculaTempo
-
-calculaTempoCriar(); //calcular tempo médio de criação de arquivos e gravar em .csv
