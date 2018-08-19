@@ -86,9 +86,11 @@ int main(){
     calculaTempoCopiar(file3);
     calculaTempoCopiar(file4);
 
-    if(manter_log) fclose(output);
+    if(manter_log) {
+        fclose(output);
+        printf("Execucao completa, verifique o arquivo de log\n");
+    }
     
-    printf("Execucao completa, verifique o arquivo de log\n");
     exit(0);
 }
 
