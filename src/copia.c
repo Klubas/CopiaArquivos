@@ -67,7 +67,7 @@ int main(){
     calculaTempoCriar(file1);
     calculaTempoCriar(file2);
     calculaTempoCriar(file3);
-   // calculaTempoCriar(file4);
+    calculaTempoCriar(file4);
     
     c = 'n';
     printf("\n %s Manter arquivos copiados em disco (S/n)\n > ", agora());
@@ -81,12 +81,14 @@ int main(){
         remover_out = 0;
     }
     
-    /*calculaTempoCopiar(file1);
+    calculaTempoCopiar(file1);
     calculaTempoCopiar(file2);
     calculaTempoCopiar(file3);
-    calculaTempoCopiar(file4);*/
+    calculaTempoCopiar(file4);
 
-    fclose(output);
+    if(manter_log) fclose(output);
+    
+    printf("Execucao completa, verifique o arquivo de log\n");
     exit(0);
 }
 
@@ -157,7 +159,7 @@ void calculaTempoCriar(MeuArquivo file){
     int i;
     for (i = 0; i < 5; i++){
         fprintf(output, "%s [%d] Criando arquivo %s.\n",agora(), i, file.id);
-        //salvaResultados(resultCriarFunc, file, encheArquivoFunc(file, 'A'));
+        salvaResultados(resultCriarFunc, file, encheArquivoFunc(file, 'A'));
         salvaResultados(resultCriarSys, file, encheArquivoSys(file, 'A'));
         
     }
