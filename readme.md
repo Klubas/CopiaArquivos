@@ -7,7 +7,7 @@ Comparar as duas estratégias:
 Método de cópia e gravação: 1 caractere por vez
 
 ## 1. Métodos utilizados para análise
-### a. Criação de arquivos
+### Criação de arquivos
 
 Foram primeiro criados 4 arquivos, de acordo com a tabela:
 
@@ -29,7 +29,7 @@ Pseudocódigo para gravação em arquivo:
         
 Utilizando a função `gettimeofday()` foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.
 
-### b. Copia de arquivos:
+### Copia de arquivos:
 
 Utilizando os arquivos anteriores foi feito o processo de cópia, também 10 vezes para cada arquivos:
 - 5 utilizando funções de manipulação de arquivo
@@ -59,12 +59,14 @@ Todos os tempos estão em segundos.
 | Tamanho     | 1         | 1024      | 1048576   | 1073741824 |
 | Tempo Médio | 0.0000028 | 0.0000084 | 0.0066086 | 16.3184658 |
 
+
 ### Criação dos arquivos usando syscalls
 
 | Arquivo     | File1.in  | File2.in  | File3.in | File4.in    |
 |-------------|-----------|-----------|----------|-------------|
 | Tamanho     | 1         | 1024      | 1048576  | 1073741824  |
 | Tempo Médio | 0.0000036 | 0.0010324 | 1.077748 | 1134.490509 |
+
 
 ### Cópia de arquivos usando funções
 
@@ -73,6 +75,7 @@ Todos os tempos estão em segundos.
 | Tamanho     | 1         | 1024     | 1048576   | 1073741824 |
 | Tempo Médio | 0.0032038 | 0.000058 | 0.0233158 | 15.2322186 |
 
+
 ### Cópia de arquivos usando syscalls
 
 | Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
@@ -80,7 +83,9 @@ Todos os tempos estão em segundos.
 | Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
 | Tempo Médio | 0.0000062 | 0.0016586 | 1.7209822 | 1868.473657 |
 
- ## 4. Explicação do resultados (por que o desempenho varia)
+
+
+ ## 4. Análise dos resultados
  
  Analisando os resultados podemos chegar a algumas conclusões\*
 
@@ -111,6 +116,7 @@ Já o arquivo `demo_write` foi criado utilizando a syscall write, e nele podemos
 A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais ordenada, pois todos os caracteres do loop foram gravados em um `buffer` antes de serem efetivamente gravados no arquivo.
 
 No segundo arquivo os caracteres foram gravados de forma desorganizada, praticamente alternada, a cada iteração do `for`. Essa segunda forma é mais lenta pois a cada iteração o processo precisa aguardar que o SO confirme a gravação, nesse momento ocorre uma mudança de contexto e o fork filho pode fazer sua gravação, logo após o caractere inserido pelo processo pai.
+
 
 #### Implementação da função fputc()
 
