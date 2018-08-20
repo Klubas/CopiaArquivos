@@ -1,4 +1,4 @@
-# Avaliação de desempenho em termo de speedup
+# Avaliação de desempenho na cópia de arquivos em termo de speedup
 
 Comparar as duas estratégias:
  - Syscalls: `write()`, `read()`
@@ -29,7 +29,7 @@ Pseudocódigo para gravação em arquivo:
         
 Utilizando a função `gettimeofday()` foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.
 
-### Copia de arquivos:
+### Copia de arquivos
 
 Utilizando os arquivos anteriores foi feito o processo de cópia, também 10 vezes para cada arquivos:
 - 5 utilizando funções de manipulação de arquivo
@@ -44,23 +44,39 @@ Utilizando a função `gettimeofday()` foram obtidos os tempos de execução par
 
 
 ## 2. Resultados
-### Configuração da máquina
+
+O programa foi executado em duas máquinas com distintas configurações de hardware. 
+
+Em realação ao software as duas configurações são bem similares.
+
+### Configuração da Máquina 1
     Linux Manjaro
-    Intel Core i3 3310m 2.4GHz
+    Intel Core i3 3310m 2.4GHz (2 Cores 4 Threads)
     6GB RAM DDR3 1600MHz
     HDD 320GB 5400 RPM
     
-Todos os tempos estão em segundos.
+Resultados completos salvos na pasta `Máquina 1`    
+
+### Configuração da Máquina 2
+    Linux Manjaro
+    AMD Ryzen 3 1300x 3.5GHz (4 Cores 4 Threads)
+    12GB RAM DDR4 2400MHz
+    SSD 480GB 6Gb/s
     
-### Criação dos arquivos usando funções
+Resultados completos salvos na pasta `Máquina 2`
+    
+### Resultados Máquina 1
+
+Todos os tempos estão em segundos.
+
+#### Criação dos arquivos usando funções
 
 | Arquivo     | File1.in  | File2.in  | File3.in  | File4.in   |
 |-------------|-----------|-----------|-----------|------------|
 | Tamanho     | 1         | 1024      | 1048576   | 1073741824 |
 | Tempo Médio | 0.0000028 | 0.0000084 | 0.0066086 | 16.3184658 |
 
-
-### Criação dos arquivos usando syscalls
+#### Criação dos arquivos usando syscalls
 
 | Arquivo     | File1.in  | File2.in  | File3.in | File4.in    |
 |-------------|-----------|-----------|----------|-------------|
@@ -68,7 +84,7 @@ Todos os tempos estão em segundos.
 | Tempo Médio | 0.0000036 | 0.0010324 | 1.077748 | 1134.490509 |
 
 
-### Cópia de arquivos usando funções
+#### Cópia de arquivos usando funções
 
 | Arquivo     | File1.in  | File2.in | File3.in  | File4.in   |
 |-------------|-----------|----------|-----------|------------|
@@ -76,24 +92,64 @@ Todos os tempos estão em segundos.
 | Tempo Médio | 0.0032038 | 0.000058 | 0.0233158 | 15.2322186 |
 
 
-### Cópia de arquivos usando syscalls
+#### Cópia de arquivos usando syscalls
 
 | Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
 |-------------|-----------|-----------|-----------|-------------|
 | Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
 | Tempo Médio | 0.0000062 | 0.0016586 | 1.7209822 | 1868.473657 |
 
+### Resultados Máquina 2
 
+Todos os tempos estão em segundos.
+    
+#### Criação dos arquivos usando funções
+
+| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in   |
+|-------------|-----------|-----------|-----------|------------|
+| Tamanho     | 1         | 1024      | 1048576   | 1073741824 |
+| Tempo Médio | 0.0000018 | 0.0000074 | 0.0041192 | 3.1261698  |
+
+#### Criação dos arquivos usando syscalls
+
+| Arquivo     | File1.in  | File2.in  | File3.in | File4.in    |
+|-------------|-----------|-----------|----------|-------------|
+| Tamanho     | 1         | 1024      | 1048576  | 1073741824  |
+| Tempo Médio | 0.0000036 | 0.0017828 | 0.697322 | 496.1882996 |
+
+#### Cópia de arquivos usando funções
+
+| Arquivo     | File1.in  | File2.in | File3.in | File4.in   |
+|-------------|-----------|----------|----------|------------|
+| Tamanho     | 1         | 1024     | 1048576  | 1073741824 |
+| Tempo Médio | 0.0000026 | 0.000007 | 0.005848 | 5.4580522  |
+
+#### Cópia de arquivos usando syscalls
+
+| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
+|-------------|-----------|-----------|-----------|-------------|
+| Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
+| Tempo Médio | 0.0000018 | 0.0006704 | 0.6590028 | 681.0315432 |
+
+
+ ## 3. Comparação dos resultados
+ 
+Não convém fazer uma comparação direta entre os resultados dos dois computadores utilizados por estarem equipados com processadores de gerações muitos distantes e com propósitos distntos. Sem dúvidas o processador mais novo (Ryzen 3) se sairá muito melhor em todos os testes que possam vir a ser feitos.
+
+O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e foi lançado em 2012. É um processador voltado para computadores mobile tanto que a máquina utilizada é um notebook.
+
+Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para Desktops, sendo assim sem as limitações de um processador mobile.
+
+O que será analisado é se as conclusões a serem tiradas se mantém constantes independendo do hardware utilizado.
 
  ## 3. Análise dos resultados
- 
- Analisando os resultados podemos chegar a algumas conclusões\*
 
-- Gravar um arquivo utilizando as funções é mais rápido
-- Copiar um arquivo utilizando as funções também é mais rápido
+De acordo com resultados obtidos, podemos chegar a algumas conclusões quanto ao desempenho de cada um dos métodos utilizados:
+
+- Gravar e Copiar um arquivo utilizando as funções é mais rápido
 - Não existe grande diferença entre gravar ou copiar um arquivo utilizando funções
 - Utilizando as syscalls, copiar um arquivo é perceptívelmente mais lento do que apenas gravar
-- Copiar e criar arquivos utilizando funções é cerca de 100 vezes mais rápido do que utilizando syscalls\**
+- Copiar e criar arquivos utilizando funções é cerca de 100 a 120 vezes mais rápido do que utilizando syscalls\**
 
 \*Os tempos dos arquivos 1 e 2 possuem mais variações, por serem menores qualquer variação no uso do processador pode afetar o desempenho de forma inesperada.
 
@@ -146,12 +202,5 @@ No segundo arquivo os caracteres foram gravados de forma desorganizada, praticam
     http://www.gnu.org/software/libc/manual/html_node/Stream-Buffering.html
     https://code.woboq.org/userspace/glibc/sysdeps/unix/sysv/linux/write.c.html
     https://code.woboq.org/userspace/glibc/libio/fputc.c.html
-
-
-### Desktop
-    Windows 10 Pro
-    AMD Ryzen 3 1300x 3.5GHz
-    12GB RAM DDR4 2400MHz
-    SSD 480GB 6Gb/s
-    HDD 750GB 5400 RPM
-
+    https://ark.intel.com/PT-BR/products/65700/Intel-Core-i3-3110M-Processor-3M-Cache-2_40-GHz
+    https://www.amd.com/pt/products/cpu/amd-ryzen-3-1300x
