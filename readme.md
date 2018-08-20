@@ -11,11 +11,11 @@ Método de cópia: 1 bloco de cada vez
 Foram primeiro criados 4 arquivos, de acordo com a tabela:
 
 | Arquivo  	| Tamanho (bytes)| 
-|----------	|------------	|
-| File1.in 	| 1          	|
-| File2.in 	| 1024       	|
-| File3.in 	| 1048576    	|
-| File4.in 	| 1073741824 	|
+|----------	|----------------|
+| File1.in 	| 1          	 |
+| File2.in 	| 1024       	 |
+| File3.in 	| 1048576    	 |
+| File4.in 	| 1073741824 	 |
 
 Esse procedimento foi repetido 10 vezes para cada arquivo:
 - 5 utilizando funções de manipulação de arquivo 
@@ -51,40 +51,31 @@ Utilizando a função gettimeofday() foram obtidos os tempos de execução para 
     
 #### Criação dos arquivos usando funções
 
-| Arquivo  	| tamanho    	| Tempo Médio |
-|----------	|------------	|------------	|
-| File1.in 	| 1          	| 0,0000032  	|
-| File2.in 	| 1024       	| 0,0000102  	|
-| File3.in 	| 1048576    	| 0,0084248  	|
-| File4.in 	| 1073741824 	| 11,3113002 	|
+| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in   |
+|-------------|-----------|-----------|-----------|------------|
+| Tamanho     | 1         | 1024      | 1048576   | 1073741824 |
+| Tempo Médio | 0.0000028 | 0.0000084 | 0.0066086 | 16.3184658 |
 
 #### Criação dos arquivos usando syscalls
 
-| Arquivo  	| tamanho    	| Tempo Médio |
-|----------	|------------	|------------	|
-| File1.in 	| 1          	| 0,  	|
-| File2.in 	| 1024       	| 0,  	|
-| File3.in 	| 1048576    	| 0,  	|
-| File4.in 	| 1073741824 	| 0   	|
+| Arquivo     | File1.in  | File2.in  | File3.in | File4.in    |
+|-------------|-----------|-----------|----------|-------------|
+| Tamanho     | 1         | 1024      | 1048576  | 1073741824  |
+| Tempo Médio | 0.0000036 | 0.0010324 | 1.077748 | 1134.490509 |
 
 ### Cópia de arquivos usando funções
 
-| Arquivo  	| tamanho    	| Tempo Médio|
-|----------	|------------	|-----------	|
-| File1.in 	| 1          	| 0,0000098 	|
-| File2.in 	| 1024       	| 0,0000214 	|
-| File3.in 	| 1048576    	| 0,0110352 	|
-| File4.in 	| 1073741824 	| 14,375128 	|
+| Arquivo     | File1.in  | File2.in | File3.in  | File4.in   |
+|-------------|-----------|----------|-----------|------------|
+| Tamanho     | 1         | 1024     | 1048576   | 1073741824 |
+| Tempo Médio | 0.0032038 | 0.000058 | 0.0233158 | 15.2322186 |
 
 #### Cópia de arquivos usando syscalls
 
-| Arquivo  	| tamanho    	| Tempo Médio  |
-|----------	|------------	|-------------	|
-| File1.in 	| 1          	| 0,000016    	|
-| File2.in 	| 1024       	| 0,0035406   	|
-| File3.in 	| 1048576    	| 2,1966092   	|
-| File4.in 	| 1073741824 	| 2651,520801 	|
-
+| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
+|-------------|-----------|-----------|-----------|-------------|
+| Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
+| Tempo Médio | 0.0000062 | 0.0016586 | 1.7209822 | 1868.473657 |
 
  ## 4. Explicação do resultados (por que o desempenho varia)
  - Referências pesquisa
