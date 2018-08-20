@@ -113,9 +113,9 @@ Já o arquivo `demo_write` foi criado utilizando a syscall write, e nele podemos
 
 `aaaaaaaaaaaaaaaaaaaaabababababababababababababababababbabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbbbbbbbbbbbbbbbbbbb`
 
-A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais ordenada, pois todos os caracteres do loop foram gravados em um `buffer` antes de serem efetivamente gravados no arquivo.
+A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais ordenada, pois todos os caracteres do loop foram colocados em uma `stream`. Essa `stream` que é o que será gravado no arquivo, utilizando apenas uma chamada de sistema para todos os caracteres.
 
-No segundo arquivo os caracteres foram gravados de forma desorganizada, praticamente alternada, a cada iteração do `for`. Essa segunda forma é mais lenta pois a cada iteração o processo precisa aguardar que o SO confirme a gravação, nesse momento ocorre uma mudança de contexto e o fork filho pode fazer sua gravação, logo após o caractere inserido pelo processo pai.
+No segundo arquivo os caracteres foram gravados de forma desorganizada, praticamente alternada, a cada iteração do `for`. Essa segunda forma é mais lenta pois a cada iteração o processo precisa aguardar que o SO confirme a gravação. Nesse momento pode ocorrer uma mudança de contexto e o fork filho faz sua gravação, logo após o caractere inserido pelo processo pai.
 
 
 #### Implementação da função fputc()
@@ -141,9 +141,11 @@ No segundo arquivo os caracteres foram gravados de forma desorganizada, praticam
  
 ## Referências
     
-    http://pubs.opengroup.org/
-    https://code.woboq.org/
-    tldp.org
+    https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/fputc.htm
+    https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/apis/write.htm
+    http://www.gnu.org/software/libc/manual/html_node/Stream-Buffering.html
+    https://code.woboq.org/userspace/glibc/sysdeps/unix/sysv/linux/write.c.html
+    https://code.woboq.org/userspace/glibc/libio/fputc.c.html
 
 
 ### Desktop
