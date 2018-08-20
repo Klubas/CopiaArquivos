@@ -184,11 +184,6 @@ double encheArquivoFunc(MeuArquivo file, char c){
     
     fclose(file.in);
     fprintf(output, "%s Criado arquivo %s. - Tamanho: %d Bytes\n",agora() ,file.id, file.tam);
-
-    if(remover_out){
-        remove(file.output_id);
-        fprintf(output, "%s %s foi removido.\n",agora(), file.output_id);
-    }
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
@@ -208,10 +203,6 @@ double encheArquivoSys(MeuArquivo file, char c){
     close(in);
     fprintf(output, "%s Criado arquivo %s. - Tamanho: %d Bytes\n",agora() , file.id, file.tam);
 
-    if(remover_out){
-        remove(file.output_id);
-        fprintf(output, "%s %s foi removido.\n",agora(), file.output_id);
-    }
     
     return (double)   (t_fim.tv_sec - t_inicio.tv_sec) + 
             (((double) (t_fim.tv_usec - t_inicio.tv_usec))/1000000);
