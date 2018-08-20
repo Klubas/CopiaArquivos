@@ -51,29 +51,7 @@ int main(){
     int i;
     char c = 'n';
 
-    printf("\n %s Manter Log?(s/N)\n > ", agora());
-    scanf("%c", &c);
-
-    if(c == 'n' || c == 'N'){
-        manter_log = 0;
-    } else {
-	manter_log = 1;
-	printf("Executando...\n");
-    }
-
-    if(manter_log) output = fopen("logfile.log", "a");
-    else output = stdout;
-
-    criarArquivo();
-    criarArquivosResult();
-
-    calculaTempoCriar(file1);
-    calculaTempoCriar(file2);
-    calculaTempoCriar(file3);
-    calculaTempoCriar(file4);
-    
-    c = 'n';
-    printf("\n %s Manter arquivos copiados em disco (S/n)\n > ", agora());
+    printf("\n%s Manter arquivos copiados em disco (S/n)\n > ", agora());
     scanf("%c", &c);
     
     if(c == 'n' || c == 'N'){
@@ -83,6 +61,28 @@ int main(){
         printf("%s Arquivos serao mantidos.\n", agora());
         remover_out = 0;
     }
+
+    if(manter_log) output = fopen("logfile.log", "a");
+    else output = stdout;
+
+    c = 'n';
+    printf("\n%s Manter Log?(s/N)\n > ", agora());
+    scanf("%c", &c);
+
+    if(c == 'n' || c == 'N'){
+        manter_log = 0;
+    } else {
+	manter_log = 1;
+	printf("Executando...\n");
+    }
+
+    criarArquivo();
+    criarArquivosResult();
+
+    calculaTempoCriar(file1);
+    calculaTempoCriar(file2);
+    calculaTempoCriar(file3);
+    calculaTempoCriar(file4);
     
     calculaTempoCopiar(file1);
     calculaTempoCopiar(file2);
@@ -176,7 +176,7 @@ double encheArquivoFunc(MeuArquivo file, char c){
     int i;
     file.in = fopen(file.id, "w");    
 
-     fprintf(output, "%s Criando arquivo %s usando funcoes",agora() , file.id);
+     fprintf(output, "%s Criando arquivo %s usando funcoes\n",agora() , file.id);
     
     gettimeofday(&t_inicio, &tzp);
     for(i=0; i < file.tam; i++) fputc(c, file.in);
@@ -194,7 +194,7 @@ double encheArquivoSys(MeuArquivo file, char c){
 
     in = open(file.id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
 
-   fprintf(output, "%s Criando arquivo %s usando syscalls",agora() , file.id);
+   fprintf(output, "%s Criando arquivo %s usando syscalls\n",agora() , file.id);
 
     gettimeofday(&t_inicio, &tzp);
     for(i = 0;i < file.tam; i++) write(in,&c,1);
@@ -215,7 +215,7 @@ double copiaFunc(MeuArquivo file){
     file.in = fopen(file.id,"r");
     file.out = fopen(file.output_id,"w");
 
-    fprintf(output, "%s Copiando arquivo %s usando funcoes",agora() , file.id);
+    fprintf(output, "%s Copiando arquivo %s usando funcoes\n",agora() , file.id);
 
     gettimeofday(&t_inicio, &tzp);
     while((c = fgetc(file.in)) != EOF) fputc(c, file.out);
@@ -244,7 +244,7 @@ double copiaSys(MeuArquivo file){
     out = open(file.output_id, O_WRONLY| O_CREAT,S_IRUSR|S_IWUSR); //linux
     //out = open(file.output_id, O_WRONLY | O_CREAT);
 
-    fprintf(output, "%s Copiando arquivo %s usando syscalls",agora() , file.id);
+    fprintf(output, "%s Copiando arquivo %s usando syscalls\n",agora() , file.id);
     
     gettimeofday(&t_inicio, &tzp);
     while(read(in,&c,1) == 1) write(out,&c,1);
