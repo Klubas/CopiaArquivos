@@ -45,10 +45,10 @@ Utilizando a função `gettimeofday()` foram obtidos os tempos de execução par
 
 ## 2. Resultados
 ### Configuração da máquina
-    `Linux Manjaro
+    Linux Manjaro
     Intel Core i3 3310m 2.4GHz
     6GB RAM DDR3 1600MHz
-    HDD 320GB 5400 RPM`
+    HDD 320GB 5400 RPM
     
 Todos os tempos estão em segundos.
     
