@@ -142,7 +142,7 @@ Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para D
 
 O que será analisado é se as conclusões a serem tiradas se mantém constantes independendo do hardware utilizado.
 
- ## 3. Análise dos resultados
+ ## 4. Análise dos resultados
 
 De acordo com resultados obtidos, podemos chegar a algumas conclusões quanto ao desempenho de cada um dos métodos utilizados:
 
@@ -173,6 +173,7 @@ A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais or
 
 No segundo arquivo os caracteres foram gravados de forma desorganizada, praticamente alternada, a cada iteração do `for`. Essa segunda forma é mais lenta pois a cada iteração o processo precisa aguardar que o SO confirme a gravação. Nesse momento pode ocorrer uma mudança de contexto e o fork filho faz sua gravação, logo após o caractere inserido pelo processo pai.
 
+## 5. Implementações
 
 #### Implementação da função fputc()
 
@@ -195,7 +196,7 @@ No segundo arquivo os caracteres foram gravados de forma desorganizada, praticam
       return SYSCALL_CANCEL (write, fd, buf, nbytes);
     }    
  
-## 4. Referências
+## 6. Referências
     
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/fputc.htm
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/apis/write.htm
