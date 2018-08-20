@@ -4,3 +4,124 @@ rm: não foi possível remover 'File3.in': Arquivo ou diretório não encontrado
 rm: não foi possível remover 'File3.out': Arquivo ou diretório não encontrado
 rm: não foi possível remover 'File4.in': Arquivo ou diretório não encontrado
 rm: não foi possível remover 'File4.out': Arquivo ou diretório não encontrado
+20/08/2018 - 00:54:08> [0] Criando arquivo File1.in.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> [1] Criando arquivo File1.in.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> [2] Criando arquivo File1.in.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> [3] Criando arquivo File1.in.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> [4] Criando arquivo File1.in.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File1.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:54:08> File1.out foi removido.
+20/08/2018 - 00:54:08> Resultados (criacao Funcoes) gravados em ResultCriarFunc.csv
+20/08/2018 - 00:54:08> Resultados (criacao Syscalls) gravados em ResultCriarSys.csv
+20/08/2018 - 00:54:08> [0] Criando arquivo File2.in.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> [1] Criando arquivo File2.in.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> [2] Criando arquivo File2.in.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> [3] Criando arquivo File2.in.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando syscalls20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54:08> [4] Criando arquivo File2.in.
+20/08/2018 - 00:54:08> Criando arquivo File2.in usando funcoes20/08/2018 - 00:54:08> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:54:08> File2.out foi removido.
+20/08/2018 - 00:54rm: não foi possível remover 'File1.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File2.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File3.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File4.out': Arquivo ou diretório não encontrado
+20/08/2018 - 00:56:19> [0] Criando arquivo File1.in.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> [1] Criando arquivo File1.in.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> [2] Criando arquivo File1.in.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> [3] Criando arquivo File1.in.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> [4] Criando arquivo File1.in.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File1.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File1.in. - Tamanho: 1 Bytes
+20/08/2018 - 00:56:19> File1.out foi removido.
+20/08/2018 - 00:56:19> Resultados (criacao Funcoes) gravados em ResultCriarFunc.csv
+20/08/2018 - 00:56:19> Resultados (criacao Syscalls) gravados em ResultCriarSys.csv
+20/08/2018 - 00:56:19> [0] Criando arquivo File2.in.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> [1] Criando arquivo File2.in.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> [2] Criando arquivo File2.in.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> [3] Criando arquivo File2.in.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando syscalls20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56:19> [4] Criando arquivo File2.in.
+20/08/2018 - 00:56:19> Criando arquivo File2.in usando funcoes20/08/2018 - 00:56:19> Criado arquivo File2.in. - Tamanho: 1024 Bytes
+20/08/2018 - 00:56:19> File2.out foi removido.
+20/08/2018 - 00:56rm: não foi possível remover 'File1.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File2.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File3.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File4.in': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File4.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File1.in': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File1.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File2.in': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File2.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File3.in': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File3.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File4.in': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'File4.out': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'ResultFunc.csv': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'ResultSys.csv': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'ResultCriarFunc.csv': Arquivo ou diretório não encontrado
+rm: não foi possível remover 'ResultCriarSys.csv': Arquivo ou diretório não encontrado

@@ -56,7 +56,10 @@ int main(){
 
     if(c == 'n' || c == 'N'){
         manter_log = 0;
-    } else manter_log = 1;
+    } else {
+	manter_log = 1;
+	printf("Executando...\n");
+    }
 
     if(manter_log) output = fopen("logfile.log", "a");
     else output = stdout;
