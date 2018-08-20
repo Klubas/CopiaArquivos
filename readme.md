@@ -136,11 +136,11 @@ Todos os tempos estão em segundos.
  
 Não convém fazer uma comparação direta entre os resultados dos dois computadores utilizados por estarem equipados com processadores de gerações muitos distantes e com propósitos distntos. Sem dúvidas o processador mais novo (Ryzen 3) se sairá muito melhor em todos os testes que possam vir a ser feitos.
 
-O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e foi lançado em 2012. É um processador voltado para computadores mobile tanto que a máquina utilizada é um notebook.
+O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e foi lançado em 2012. É um processador voltado para computadores mobile, tanto que a máquina utilizada é um notebook.
 
 Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para Desktops, sendo assim sem as limitações de um processador mobile.
 
-O que será analisado é se as conclusões a serem tiradas se mantém constantes independendo do hardware utilizado.
+O que será analisado é se as conclusões a serem tiradas se mantém constantes, independendo do hardware utilizado.
 
  ## 4. Análise dos resultados
 
