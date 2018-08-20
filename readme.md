@@ -102,11 +102,11 @@ Na pasta `demo` está incluso um pequeno programa e os arquivos resultantes de s
 
 O arquivo `demo_fputc` foi criado utilizando a função fputc, nele podemos ver o seguinte conteúdo:
 
-``
+`aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`
     
 Já o arquivo `demo_write` foi criado utilizando a syscall write, e nele podemos ver o seguinte:
 
-``
+`aaaaaaaaaaaaaaaaaaaaabababababababababababababababababbabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbbbbbbbbbbbbbbbbbbb`
 
 A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais ordenada, pois todos os caracteres do loop foram gravados em um `buffer` antes de serem efetivamente gravados no arquivo.
 
