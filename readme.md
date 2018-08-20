@@ -29,13 +29,13 @@ Pseudocódigo para gravação em arquivo:
         
 Utilizando a função `gettimeofday()` foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.
 
-### Copia de arquivos
+### Cópia de arquivos
 
 Utilizando os arquivos anteriores foi feito o processo de cópia, também 10 vezes para cada arquivos:
 - 5 utilizando funções de manipulação de arquivo
 - 5 utilizando syscalls para cópia do arquivo
 
-Psudocódigo para cópia de arquivo
+Pseudocódigo para cópia de arquivo
     
     Enquanto (c = leia(input) != EOF)
         escreva(c, output);
@@ -47,7 +47,7 @@ Utilizando a função `gettimeofday()` foram obtidos os tempos de execução par
 
 O programa foi executado em duas máquinas com distintas configurações de hardware. 
 
-Em realação ao software as duas configurações são bem similares.
+Em relação ao software as duas configurações são bem similares.
 
 ### Configuração da Máquina 1
     Linux Manjaro
@@ -134,13 +134,13 @@ Todos os tempos estão em segundos.
 
  ## 3. Comparação dos resultados
  
-Não convém fazer uma comparação direta entre os resultados dos dois computadores utilizados por estarem equipados com processadores de gerações muitos distantes e com propósitos distntos. Sem dúvidas o processador mais novo (Ryzen 3) se sairá muito melhor em todos os testes que possam vir a ser feitos.
+Não convém fazer uma comparação direta entre os resultados dos dois computadores utilizados por estarem equipados com processadores de gerações muitos distantes e com propósitos distintos. Sem dúvidas o processador mais novo (Ryzen 3) se sairá muito melhor em todos os testes que possam vir a ser feitos.
 
 O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e foi lançado em 2012. É um processador voltado para computadores mobile, tanto que a máquina utilizada é um notebook.
 
 Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para Desktops, sendo assim sem as limitações de um processador mobile.
 
-O que será analisado é se as conclusões a serem tiradas se mantém constantes, independendo do hardware utilizado.
+O que será analisado é se as conclusões a serem tiradas se mantém constantes, independente do hardware utilizado.
 
  ## 4. Análise dos resultados
 
@@ -148,7 +148,7 @@ De acordo com resultados obtidos, podemos chegar a algumas conclusões quanto ao
 
 - Gravar e Copiar um arquivo utilizando as funções é mais rápido
 - Não existe grande diferença entre gravar ou copiar um arquivo utilizando funções
-- Utilizando as syscalls, copiar um arquivo é perceptívelmente mais lento do que apenas gravar
+- Utilizando as syscalls, copiar um arquivo é perceptivelmente mais lento do que apenas gravar
 - Copiar e criar arquivos utilizando funções é cerca de 100 a 120 vezes mais rápido do que utilizando syscalls\**
 
 \*Os tempos dos arquivos 1 e 2 possuem mais variações, por serem menores qualquer variação no uso do processador pode afetar o desempenho de forma inesperada.
