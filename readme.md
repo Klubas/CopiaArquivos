@@ -161,7 +161,7 @@ Na prática, o uso da função `fputc` (ou outras como `fprintf` ou `fwrite`) te
 
 ## 5. Demonstração
 
-Na pasta `demo` está incluso um pequeno programa e os arquivos resultantes de sua execução para demonstrar a diferença entre esses dois métodos. Esse progrma utiliza a função fork() para ter dois processos escrevendo em um mesmo arquivo de forma simultânea
+Na pasta `demo` está incluso um pequeno programa e os arquivos resultantes de sua execução para demonstrar a diferença entre esses dois métodos. Esse programa utiliza a função fork() para ter dois processos escrevendo em um mesmo arquivo de forma simultânea
 
 O arquivo `demo_fputc` foi criado utilizando a função fputc, nele podemos ver o seguinte conteúdo:
 
