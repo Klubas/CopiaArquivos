@@ -24,8 +24,8 @@ Esse procedimento foi repetido 10 vezes para cada arquivo:
 
 Pseudocódigo para gravação em arquivo:
 
-    `Enquanto (cont < tamanho_arquivo)
-        escreva('A', file); cont++;`
+    Enquanto (cont < tamanho_arquivo)
+        escreva('A', file); cont++;
         
 Utilizando a função `gettimeofday()` foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.
 
@@ -37,8 +37,8 @@ Utilizando os arquivos anteriores foi feito o processo de cópia, também 10 vez
 
 Psudocódigo para cópia de arquivo
     
-    `Enquanto (c = leia(input) != EOF)
-        escreva(c, output);`
+    Enquanto (c = leia(input) != EOF)
+        escreva(c, output);
        
 Utilizando a função `gettimeofday()` foram obtidos os tempos de execução para que fosse tirada uma média das 5 execuções.       
 
