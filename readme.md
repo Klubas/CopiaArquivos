@@ -55,7 +55,7 @@ Em realação ao software as duas configurações são bem similares.
     6GB RAM DDR3 1600MHz
     HDD 320GB 5400 RPM
     
-Resultados completos salvos na pasta `Máquina 1`    
+Resultados completos salvos na pasta `manjaro-lucas`    
 
 ### Configuração da Máquina 2
     Linux Manjaro
@@ -63,7 +63,7 @@ Resultados completos salvos na pasta `Máquina 1`
     12GB RAM DDR4 2400MHz
     SSD 480GB 6Gb/s
     
-Resultados completos salvos na pasta `Máquina 2`
+Resultados completos salvos na pasta `manjaro-pc`
     
 ### Resultados Máquina 1
 
