@@ -85,7 +85,7 @@ Todos os tempos estão em segundos.
 
 
 
- ## 4. Análise dos resultados
+ ## 3. Análise dos resultados
  
  Analisando os resultados podemos chegar a algumas conclusões\*
 
@@ -139,7 +139,7 @@ No segundo arquivo os caracteres foram gravados de forma desorganizada, praticam
       return SYSCALL_CANCEL (write, fd, buf, nbytes);
     }    
  
-## Referências
+## 4. Referências
     
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/fputc.htm
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/apis/write.htm
