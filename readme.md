@@ -13,10 +13,10 @@ Foram primeiro criados 4 arquivos, de acordo com a tabela:
 
 | Arquivo  	| Tamanho (bytes)| 
 |----------	|----------------|
-| File1.in 	| 1          	 |
-| File2.in 	| 1024       	 |
-| File3.in 	| 1048576    	 |
-| File4.in 	| 1073741824 	 |
+| File1.in 	| 1          	   |
+| File2.in 	| 1024       	   |
+| File3.in 	| 1048576    	   |
+| File4.in 	| 1073741824 	   |
 
 Esse procedimento foi repetido 10 vezes para cada arquivo:
 - 5 utilizando funções de manipulação de arquivo 
@@ -86,10 +86,10 @@ Todos os tempos estão em segundos.
 
 #### Cópia de arquivos usando funções
 
-| Arquivo     | File1.in  | File2.in | File3.in  | File4.in   |
-|-------------|-----------|----------|-----------|------------|
-| Tamanho     | 1         | 1024     | 1048576   | 1073741824 |
-| Tempo Médio | 0.0032038 | 0.000058 | 0.0233158 | 15.2322186 |
+| Arquivo     | File1.in  | File2.in | File3.in  | File4.in    |
+|-------------|-----------|----------|-----------|-------------|
+| Tamanho     | 1         | 1024     | 1048576   | 1073741824  |
+| Tempo Médio | 0.0032038 | 0.000058 | 0.0233158 | 15.2322186  |
 
 
 #### Cópia de arquivos usando syscalls
@@ -105,24 +105,24 @@ Todos os tempos estão em segundos.
     
 #### Criação dos arquivos usando funções
 
-| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in   |
-|-------------|-----------|-----------|-----------|------------|
-| Tamanho     | 1         | 1024      | 1048576   | 1073741824 |
-| Tempo Médio | 0.0000018 | 0.0000074 | 0.0041192 | 3.1261698  |
+| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
+|-------------|-----------|-----------|-----------|-------------|
+| Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
+| Tempo Médio | 0.0000018 | 0.0000074 | 0.0041192 | 3.1261698   |
 
 #### Criação dos arquivos usando syscalls
 
-| Arquivo     | File1.in  | File2.in  | File3.in | File4.in    |
-|-------------|-----------|-----------|----------|-------------|
-| Tamanho     | 1         | 1024      | 1048576  | 1073741824  |
-| Tempo Médio | 0.0000036 | 0.0017828 | 0.697322 | 496.1882996 |
+| Arquivo     | File1.in  | File2.in  | File3.in | File4.in     |
+|-------------|-----------|-----------|----------|--------------|
+| Tamanho     | 1         | 1024      | 1048576  | 1073741824   |
+| Tempo Médio | 0.0000036 | 0.0017828 | 0.697322 | 496.1882996  |
 
 #### Cópia de arquivos usando funções
 
-| Arquivo     | File1.in  | File2.in | File3.in | File4.in   |
-|-------------|-----------|----------|----------|------------|
-| Tamanho     | 1         | 1024     | 1048576  | 1073741824 |
-| Tempo Médio | 0.0000026 | 0.000007 | 0.005848 | 5.4580522  |
+| Arquivo     | File1.in  | File2.in | File3.in | File4.in      |
+|-------------|-----------|----------|----------|---------------|
+| Tamanho     | 1         | 1024     | 1048576  | 1073741824    |
+| Tempo Médio | 0.0000026 | 0.000007 | 0.005848 | 5.4580522     |
 
 #### Cópia de arquivos usando syscalls
 
@@ -159,6 +159,8 @@ Técnicamente, a gravação em arquivo utilizando a syscall `write()` é mais r�
 
 Na prática, o uso da função `fputc` (ou outras como `fprintf` ou `fwrite`) tem um desempenho muito melhor, pelo fato de que na sua implementação é criado um buffer com os caracteres que serão gravados, antes de eles serem efetivamente gravados.
 
+## 5. Demonstração
+
 Na pasta `demo` está incluso um pequeno programa e os arquivos resultantes de sua execução para demonstrar a diferença entre esses dois métodos. Esse progrma utiliza a função fork() para ter dois processos escrevendo em um mesmo arquivo de forma simultânea
 
 O arquivo `demo_fputc` foi criado utilizando a função fputc, nele podemos ver o seguinte conteúdo:
@@ -173,7 +175,7 @@ A diferença é clara, no primeiro arquivo a gravação ocorreu de forma mais or
 
 No segundo arquivo os caracteres foram gravados de forma desorganizada, praticamente alternada, a cada iteração do `for`. Essa segunda forma é mais lenta pois a cada iteração o processo precisa aguardar que o SO confirme a gravação. Nesse momento pode ocorrer uma mudança de contexto e o fork filho faz sua gravação, logo após o caractere inserido pelo processo pai.
 
-## 5. Implementações
+## 6. Implementações
 
 #### Implementação da função fputc()
 
@@ -196,7 +198,7 @@ No segundo arquivo os caracteres foram gravados de forma desorganizada, praticam
       return SYSCALL_CANCEL (write, fd, buf, nbytes);
     }    
  
-## 6. Referências
+## 7. Referências
     
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/fputc.htm
     https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/apis/write.htm
