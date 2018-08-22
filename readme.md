@@ -140,6 +140,8 @@ O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e fo
 
 Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para Desktops, sendo assim sem as limitações de um processador mobile.
 
+Além da diferença entre processadores, a `Máquina 2` está equipada com um SSD, que seria o principal responsável pelo seu melhor desempenho, ainda mais do que o processador.
+
 O que será analisado é se as conclusões a serem tiradas se mantém constantes, independente do hardware utilizado.
 
  ## 4. Análise dos resultados
