@@ -52,6 +52,7 @@ Em relação ao software as duas configurações são bem similares.
 ### Configuração da Máquina 1
     Linux Manjaro
     Intel Core i3 3310m 2.4GHz (2 Cores 4 Threads)
+    6GB SWAP
     6GB RAM DDR3 1600MHz
     HDD 320GB 5400RPM
     
@@ -60,6 +61,7 @@ Resultados completos salvos na pasta `manjaro-lucas`
 ### Configuração da Máquina 2
     Linux Manjaro
     AMD Ryzen 3 1300x 3.5GHz (4 Cores 4 Threads)
+    12gb SWAP
     12GB RAM DDR4 2400MHz
     SSD 480GB 6Gb/s
     HDD 750GB 5400RPM
