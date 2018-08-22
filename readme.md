@@ -53,7 +53,7 @@ Em relação ao software as duas configurações são bem similares.
     Linux Manjaro
     Intel Core i3 3310m 2.4GHz (2 Cores 4 Threads)
     6GB RAM DDR3 1600MHz
-    HDD 320GB 5400 RPM
+    HDD 320GB 5400RPM
     
 Resultados completos salvos na pasta `manjaro-lucas`    
 
@@ -62,6 +62,7 @@ Resultados completos salvos na pasta `manjaro-lucas`
     AMD Ryzen 3 1300x 3.5GHz (4 Cores 4 Threads)
     12GB RAM DDR4 2400MHz
     SSD 480GB 6Gb/s
+    HDD 750GB 5400RPM
     
 Resultados completos salvos na pasta `manjaro-pc`
     
@@ -105,32 +106,35 @@ Todos os tempos estão em segundos.
     
 #### Criação dos arquivos usando funções
 
-| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
-|-------------|-----------|-----------|-----------|-------------|
-| Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
-| Tempo Médio | 0.0000018 | 0.0000074 | 0.0041192 | 3.1261698   |
+| Arquivo           | File1.in  | File2.in  | File3.in  | File4.in   |
+|-------------------|-----------|-----------|-----------|------------|
+| Tamanho           | 1         | 1024      | 1048576   | 1073741824 |
+| Tempo Médio (SSD) | 0.0000018 | 0.0000074 | 0.0041192 | 3.1261698  |
+| Tempo Médio (HDD) | 0.0000026 | 0.0000090 | 0.0044108 | 3.3527862  |
 
 #### Criação dos arquivos usando syscalls
 
-| Arquivo     | File1.in  | File2.in  | File3.in | File4.in     |
-|-------------|-----------|-----------|----------|--------------|
-| Tamanho     | 1         | 1024      | 1048576  | 1073741824   |
-| Tempo Médio | 0.0000036 | 0.0017828 | 0.697322 | 496.1882996  |
+| Arquivo           | File1.in  | File2.in  | File3.in  | File4.in    |
+|-------------------|-----------|-----------|-----------|-------------|
+| Tamanho           | 1         | 1024      | 1048576   | 1073741824  |
+| Tempo Médio (SSD) | 0.0000036 | 0.0017828 | 0.697322  | 496.1882996 |
+| Tempo Médio (HDD) | 0.0000028 | 0.0012586 | 0.4613698 | 470.5699586 |
 
 #### Cópia de arquivos usando funções
 
-| Arquivo     | File1.in  | File2.in | File3.in | File4.in      |
-|-------------|-----------|----------|----------|---------------|
-| Tamanho     | 1         | 1024     | 1048576  | 1073741824    |
-| Tempo Médio | 0.0000026 | 0.000007 | 0.005848 | 5.4580522     |
+| Arquivo           | File1.in  | File2.in  | File3.in  | File4.in   |
+|-------------------|-----------|-----------|-----------|------------|
+| Tamanho           | 1         | 1024      | 1048576   | 1073741824 |
+| Tempo Médio (SSD) | 0.0000026 | 0.000007  | 0.005848  | 5.4580522  |
+| Tempo Médio (HDD) | 0.0000030 | 0.0000078 | 0.0056538 | 5.7299330  |
 
 #### Cópia de arquivos usando syscalls
 
-| Arquivo     | File1.in  | File2.in  | File3.in  | File4.in    |
-|-------------|-----------|-----------|-----------|-------------|
-| Tamanho     | 1         | 1024      | 1048576   | 1073741824  |
-| Tempo Médio | 0.0000018 | 0.0006704 | 0.6590028 | 681.0315432 |
-
+| Arquivo           | File1.in  | File2.in  | File3.in  | File4.in     |
+|-------------------|-----------|-----------|-----------|--------------|
+| Tamanho           | 1         | 1024      | 1048576   | 1073741824   |
+| Tempo Médio (SSD) | 0.0000018 | 0.0006704 | 0.6590028 | 681.0315432  |
+| Tempo Médio (HDD) | 0.0000046 | 0.0011008 | 1.0291716 | 1056.5218994 |
 
  ## 3. Comparação dos resultados
  
@@ -140,7 +144,9 @@ O Processador Intel pertence a 3ª Geração de processadores Intel Core i3 e fo
 
 Já o processador AMD foi lançado no ano de 2017 e é um produto voltado para Desktops, sendo assim sem as limitações de um processador mobile.
 
-Além da diferença entre processadores, a `Máquina 2` está equipada com um SSD, que seria o principal responsável pelo seu melhor desempenho, ainda mais do que o processador.
+Além da diferença entre processadores, a `Máquina 2` está equipada com um SSD, muito mais rápido que um disco rígido convêncional. No entandto, na maioria dos casos, o SSD não teve resultados muito melhores que o HDD. Quase todas as situações testadas tiverem um desempenho muito parecido, com exceção para a cópia de arquivos de 1GB, onde o tempo médio caiu quase pela metade.
+
+Essa pequena diferença se deve ao fato de que para acessos a arquivos pequenos, o desempenho do SSD não é muito melhor que o deu um HDD. Nesse exemplo, o desempenho do SSD influenciou na leitura do arquivo de 1GB que seria copiado, demonstrando ai a vantagem em cima do HD.
 
 O que será analisado é se as conclusões a serem tiradas se mantém constantes, independente do hardware utilizado.
 
